@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fair Split</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="entry">
+        <div>
+          <h1>Fair Split</h1>
+          <p>Upload a bill, describe who had what, and get a reconciled split.</p>
+        </div>
+        <form id="split-form">
+          <label>
+            Receipt image
+            <input id="receipt" name="receipt" type="file" accept="image/*,.txt,.json" required />
+          </label>
+          <label>
+            Description
+            <textarea id="description" required rows="7" placeholder="Aman skipped drinks. Priya paid."></textarea>
+          </label>
+          <button type="submit">Split bill</button>
+        </form>
+      </section>
+      <section class="results" id="results" hidden>
+        <div class="summary" id="summary"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Items</th>
+              <th>Subtotal</th>
+              <th>Tax</th>
+              <th>Service</th>
+              <th>Discount</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="people"></tbody>
+        </table>
+        <div class="columns">
+          <div>
+            <h2>Settle up</h2>
+            <ul id="settle"></ul>
+          </div>
+          <div>
+            <h2>Assumptions</h2>
+            <ul id="assumptions"></ul>
+          </div>
+          <div>
+            <h2>Flags</h2>
+            <ul id="flags"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/script.js"></script>
+  </body>
+</html>
+

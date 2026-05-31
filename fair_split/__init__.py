@@ -1,0 +1,2 @@
+"""Fair Split API package."""
+
