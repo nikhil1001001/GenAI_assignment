@@ -39,6 +39,20 @@ def split(request: SplitRequest) -> dict:
     return result_to_contract(result)
 
 
+@app.get("/split")
+def split_info() -> dict[str, object]:
+    return {
+        "status": "ok",
+        "endpoint": "/split",
+        "method": "POST",
+        "content_type": "application/json",
+        "body": {
+            "receipt_base64": "<base64 image bytes>",
+            "description": "<plain-English allocation and payer>",
+        },
+    }
+
+
 if FRONTEND.exists():
     app.mount("/", StaticFiles(directory=FRONTEND, html=True), name="frontend")
 
